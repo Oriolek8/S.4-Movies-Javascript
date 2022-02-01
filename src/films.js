@@ -177,6 +177,34 @@ return soloMinutos
 
 }
 
+// Exercise 8: Get the best film of a year
+function bestFilmOfYear(array, any) {
+  let yearBest = [];
+  let bestMovie ;
+  let numero1;
+   yearBest = array.filter(pelicula =>{
+     if(pelicula.year === any){
+
+      return pelicula
+     }
+   });
+
+      bestMovie = yearBest.sort((c1, c2) =>{
+        if(c1.score < c2.score){
+          return 1;
+        }else if(c1.score > c2.score){
+          return -1;
+        }else{
+          return 0;
+        }
+       
+      });  
+    
+    numero1 = bestMovie.filter( pelicula => pelicula == bestMovie[0])
+
+      
+   return numero1;
+  }
 
 
 
