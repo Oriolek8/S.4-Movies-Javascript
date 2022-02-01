@@ -147,7 +147,35 @@ function moviesAverageByCategory(array, tipoGenero) {
   return media;
   }
 
+// Exercise 7: Modify the duration of movies to minutes
+function hoursToMinutes(array) {
+  let soloMinutos = [];
+  let minutosTotal;
+  const moviesCopy = array.map(movie => { return { ...movie } });
 
+  
+  soloMinutos = moviesCopy.map((pelicula) => {
+    
+  let hora = pelicula.duration.indexOf('h');
+  let horaTotal = parseInt(pelicula.duration.substring(0, hora) * 60);
+  if(hora <= -1){
+    horaTotal = 0;
+  }
+  
+    let minutos = pelicula.duration.indexOf("min");
+    minutosTotal = parseInt(pelicula.duration.substring(minutos -2))
+  if(minutos <= -1){
+    minutosTotal = 0;
+  }
+  pelicula.duration = horaTotal + minutosTotal;
+
+  return pelicula;
+
+})
+
+return soloMinutos
+
+}
 
 
 
