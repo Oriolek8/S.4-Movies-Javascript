@@ -130,7 +130,7 @@ function moviesAverageByCategory(array, tipoGenero) {
 
   arrayGenero = array.filter( pelicula => {
     
-    if(pelicula.genre.includes(`${tipoGenero}`) && pelicula.score != null ){
+    if(pelicula.genre.includes(`${tipoGenero}`) && pelicula.score != "" ){
       
         return pelicula;
   
